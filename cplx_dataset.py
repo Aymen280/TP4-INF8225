@@ -23,8 +23,6 @@ class cplx_SAR_dataset_npy(Dataset):
         image = np.load(img_path).astype(np.complex64)
         mask = np.load(mask_path).astype(np.float32)
 
-        #image = (image - image.min()) / (image.max() - image.min() + 1e-8)
-
         if image.ndim == 2:
             image = np.expand_dims(image, axis=0)
         if mask.ndim == 2:
